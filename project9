@@ -1,0 +1,47 @@
+acution_logo = '''
+         :::::::::: :::::::::  :::::::::   ::::::::  ::::::::: 
+     :+:        :+:    :+: :+:    :+: :+:    :+: :+:    :+: 
+    +:+        +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+  
+   +#++:++#   +#++:++#:  +#++:++#:  +#+    +:+ +#++:++#:    
+  +#+        +#+    +#+ +#+    +#+ +#+    +#+ +#+    +#+    
+ #+#        #+#    #+# #+#    #+# #+#    #+# #+#    #+#     
+########## ###    ### ###    ###  ########  ###    ###      
+        :::      :::::::      ::: 
+      :+:      :+:   :+:    :+:   
+    +:+ +:+   +:+   +:+   +:+ +:+ 
+  +#+  +:+   +#+   +:+  +#+  +:+  
++#+#+#+#+#+ +#+   +#+ +#+#+#+#+#+ 
+     #+#   #+#   #+#       #+#    
+    ###    #######        ###     
+
+                   '''
+
+
+def find_highest_bidder(bid):
+    highest_bid = 0
+    winner = " "
+    for bidder, amount in bid.items():
+        if amount > highest_bid:
+            highest_bid = amount
+            winner = bidder
+
+def acution():
+    print(acution_logo)
+    print(f"welcome to the secret acution program!\n")
+    bid = {}
+    bidding_active = True
+
+    while bidding_active:
+        name = input("enter your name: ")
+        bid = int(input("enter your bid amount: $" ))
+        bid[name] = bid
+
+        more_bidders = input("are there more bidders 'yes' or 'no:'").lower()
+        if more_bidders == "no":
+            bidding_active = False
+
+    print(acution_logo)
+    winner, highest_bid = find_highest_bidder(bid)
+    print(f"the winner is{winner} win a bid of ${highest_bid}!")
+
+    acution()
